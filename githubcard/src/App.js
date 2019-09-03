@@ -3,10 +3,13 @@ import './App.css';
 import axios from 'axios';
 
 import CardChild from './CardChild';
+import FollowersChild from './FollowersChild';
 
 class App extends React.Component {
+
   state = {
-    cards: []
+    cards: [],
+    followers: []
   };
 
   componentDidMount(){
@@ -15,6 +18,13 @@ class App extends React.Component {
       .then((response) => {
         console.log('data:', response)
         this.setState({cards: response.data})
+      })
+      .catch(err => console.log('error'));
+    axios
+      .get('https://api.github.com/users/rogermcconkiejr/followers')
+      .then((response) => {
+        console.log('follower data:', response)
+        this.setState({followers: response.data})
       })
       .catch(err => console.log('error'));
   }
