@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 
+import CardChild from './CardChild';
+
 class App extends React.Component {
   state = {
     cards: []
@@ -18,8 +20,17 @@ class App extends React.Component {
   }
   render(){
   return (
-    <div className="App">
 
+    <div className="App">
+        <CardChild
+        key = {this.state.cards.created_at}
+        image = {this.state.cards.avatar_url}
+        name = {this.state.cards.name}
+        username = {this.state.cards.login}
+        location = {this.state.cards.location}
+        followers = {this.state.cards.followers}
+        following = {this.state.cards.following}
+        />
     </div>
   );
   }
