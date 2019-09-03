@@ -41,6 +41,15 @@ class App extends React.Component {
         followers = {this.state.cards.followers}
         following = {this.state.cards.following}
         />
+    {this.state.followers.map(follower =>{
+      return (
+             <FollowersChild
+             key = {follower.id}
+             image = {follower.avatar_url}
+             username = {follower.login}
+             />
+      )
+    })}
     </div>
   );
   }

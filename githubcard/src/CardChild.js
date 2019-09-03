@@ -4,7 +4,7 @@ const ChildCard = props => {
     console.log(props);
     return (
         <div>
-            <img src={props.image} />
+            <img src={props.image} alt={props.name}/>
             <div>{props.name}</div>
             <div>Username: {props.username}</div>
             <div>Location: {props.location}</div>
