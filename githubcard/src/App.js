@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import 'semantic-ui-css/semantic.min.css';
+import FlexContainer from 'react-styled-flexbox';
+
 
 import CardChild from './CardChild';
 import FollowersChild from './FollowersChild';
@@ -32,6 +35,8 @@ class App extends React.Component {
   return (
 
     <div className="App">
+      <h1 className="titleatty">GitHub Cards</h1>
+      <div className = "cardWrapper">
         <CardChild
         key = {this.state.cards.created_at}
         image = {this.state.cards.avatar_url}
@@ -41,15 +46,20 @@ class App extends React.Component {
         followers = {this.state.cards.followers}
         following = {this.state.cards.following}
         />
+      </div>
+    <FlexContainer wrapWrap = {true} justifySpaceAround = {true}>
     {this.state.followers.map(follower =>{
       return (
+        
              <FollowersChild
              key = {follower.id}
              image = {follower.avatar_url}
              username = {follower.login}
              />
+        
       )
     })}
+    </FlexContainer>
     </div>
   );
   }

@@ -1,16 +1,21 @@
 import React from 'react';
+import { Card, Image } from 'semantic-ui-react'
 
-const ChildCard = props => {
+
+const ChildCard = (props) => {
     console.log(props);
     return (
-        <div>
-            <img src={props.image} alt={props.name}/>
-            <div>{props.name}</div>
-            <div>Username: {props.username}</div>
-            <div>Location: {props.location}</div>
-            <div>Followers: {props.followers}</div>
-            <div>Following: {props.following}</div>
-
+        <div className = "cardWrapper">
+        <Card>
+            <Image src={props.image} alt={props.name} wrapped ui ={false}/>
+            <Card.Content>
+            <Card.Header><h1>{props.name}</h1></Card.Header>
+            <Card.Meta><h3>Username: {props.username}</h3></Card.Meta>
+            <Card.Description><h5>Location: {props.location}</h5></Card.Description>
+            <Card.Description><h5>Followers: {props.followers}</h5></Card.Description>
+            <Card.Description><h5>Following: {props.following}</h5></Card.Description>
+            </Card.Content>
+        </Card>
         </div>
     )
 }

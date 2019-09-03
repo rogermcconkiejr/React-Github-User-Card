@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 
 .App-logo {
@@ -30,4 +31,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+body{
+  height:100%;
+  width:100%;
+}
+.cardWrapper {
+  display:flex;
+  justify-content:center;
+  margin:5px;
+}
+.followerWrapper {
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  margin:10px;
+  width:25vw;
+}
+.titleatty{
+  font-size:3rem;
 }
